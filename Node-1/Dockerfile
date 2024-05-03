@@ -4,8 +4,8 @@ FROM ubuntu:latest
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copy all files from the current directory to the working directory in the container
-COPY . /usr/src/app
+# Copy all necessary files into the container
+COPY . .
 
 # Install necessary packages
 RUN apt-get update && \
@@ -20,6 +20,8 @@ RUN tar -xzf besu.tar.gz && \
     mv besu-24.3.3/* . && \
     rmdir besu-24.3.3 && \
     rm besu.tar.gz
+
+RUN chmod +x /usr/src/app/bin/besu
 
 # Set environment variables and path
 ENV PATH="/usr/src/app/bin:${PATH}"

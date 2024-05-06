@@ -29,7 +29,8 @@ ENV JAVA_TOOL_OPTIONS="-Dserver.port=8545 -Djava.net.preferIPv4Stack=true"
 
 # Default command to run on container start
 #     besu    --data-path=data    --genesis-file=./genesis.json    --rpc-http-enabled    --rpc-http-api=ETH,NET,QBFT    --host-allowlist="*"     --rpc-http-cors-origins="all"
-CMD ["besu", "--data-path=data", "--genesis-file=./genesis.json", "--rpc-http-enabled", "--rpc-http-api=ETH,NET,QBFT", "--host-allowlist=*", "--rpc-http-cors-origins=all", "--logging=DEBUG", "--rpc-http-host=0.0.0.0"]
+CMD ["besu", "--data-path=data", "--genesis-file=./genesis.json", "--rpc-http-enabled", "--rpc-http-api=ETH,NET,QBFT", "--host-allowlist=*", "--rpc-http-cors-origins=all", "--logging=DEBUG", "--rpc-http-host=0.0.0.0", "--p2p-host=0.0.0.0"]
 
 # Expose default port for JSON-RPC HTTP service
 EXPOSE 8545
+EXPOSE 30303

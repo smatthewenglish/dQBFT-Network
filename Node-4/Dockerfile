@@ -41,7 +41,11 @@ CMD ["besu", \
      "--rpc-http-port=8547", \
      "--logging=DEBUG", \
      "--rpc-http-host=0.0.0.0", \
-     "--p2p-host=0.0.0.0"]
+     # to listen on all interfaces
+     "--p2p-host=0.0.0.0",\
+     "--p2p-interface=172.17.0.5"]
+    
+#172.17.0.4
 
 
 # Expose default port for JSON-RPC HTTP service

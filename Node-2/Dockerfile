@@ -41,6 +41,7 @@ CMD ["besu", \
      "--rpc-http-port=8546", \
      "--logging=DEBUG", \
      "--rpc-http-host=0.0.0.0", \
+     "--p2p-interface=172.17.0.3",\
      "--p2p-host=0.0.0.0"]
 
 
